@@ -1,0 +1,49 @@
+{
+  "test_case": [
+    {
+      "testcase_name": "Field email kosong",
+      "data": {
+        "email": "",
+        "password": "ikhbal123",
+        "passwordConfirmation": "ikhbal123"
+      },
+      "expected": "Username tidak boleh kosong"
+    },
+    {
+      "testcase_name": "Field email tidak sesuai",
+      "data": {
+        "email": "ikhbal",
+        "password": "ikhbal123",
+        "passwordConfirmation": "ikhbal123"
+      },
+      "expected": "Email tidak sesuai"
+    },
+    {
+      "testcase_name": "Email telah digunakan",
+      "data": {
+        "email": "muhammad.118140123@student.itera.ac.id",
+        "password": "ikhbal123",
+        "passwordConfirmation": "ikhbal123"
+      },
+      "expected": "Email telah digunakan"
+    },
+    {
+      "testcase_name": "Field password kosong",
+      "data": {
+        "email": "ikhbal@email.com",
+        "password": "",
+        "passwordConfirmation": ""
+      },
+      "expected": "Password tidak boleh kosong"
+    },
+    {
+      "testcase_name": "Field konfirmasi password tidak sesuai",
+      "data": {
+        "email": "pemrogramanweb",
+        "password": "pemrogramanweb",
+        "passwordConfirmation": "pemrograman"
+      },
+      "expected": "Konfirmasi password tidak sesuai"
+    }
+  ]
+}
