@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Praktikum PWL 3</title>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <div class="register-form">
+                <h4>Muhammad Ikhbal 118140123</h4>
+                <h4>Praktikum PWL 3</h4>
+                <h5 id="status" class="text-danger"></h5>
+                <input type="email" placeholder="email address" id="email" required autocomplete="off" />
+                <input type="password" id="password" placeholder="password" />
+                <input type="password" id="password_confirmation" placeholder="password confirmation" />
+                <button type="submit" onclick="handleSubmit()">create</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function handleSubmit() {
+            let email = document.getElementById("email").value;
+            if (email.length > 0) {
+                let re = /\S+@\S+\.\S+/;
+
+                if (!re.test(email)) {
+                    document.getElementById("status").innerText = "Email tidak sesuai";
+                }
+                else if (email == "muhammad.118140123@student.itera.ac.id" || email == "ikhbal@email.com") {
+                    document.getElementById("status").innerText = "Email telah digunakan";
+                }
+                else {
+                    let password = document.getElementById("password").value;
+
+                    if (password.length > 0) {
+                        if (password.length < 8) {
+                            document.getElementById("status").innerText = "Password harus diisi minimal 8 huruf";
+                        }
+                        else {
+                            let passswordConfirmation = document.getElementById("password_confirmation").value;
+
+                            if (password != passswordConfirmation) {
+                                document.getElementById("status").innerText = "Password tidak sesuai";
+                            }
+                            else {
+                                document.getElementById("status").innerText = "";
+                            }
+                        }
+                    }
+                    else {
+                        document.getElementById("status").innerText = "Password tidak boleh kosong";
+                    }
+                }
+            }
+            else {
+                document.getElementById("status").innerText = "Email tidak boleh kosong";
+            }
+        }
+    </script>
+</body>
+
+</html>
